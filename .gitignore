@@ -5,13 +5,14 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+hw3/.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+hw3/db/*.sqlite3
+hw3/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
+hw3/log/*
 !/log/.keep
-/tmp
+hw3/tmp
+#.gitignore
