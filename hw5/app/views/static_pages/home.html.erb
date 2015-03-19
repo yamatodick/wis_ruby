@@ -1,0 +1,24 @@
+<% provide(:title, "Home") %>
+<center>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="content">
+	<h1>Tutorial Application</h1>
+	<br></br><br></br>
+		<p>
+			This application is built using references from
+			<a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+		</p>
+	
+		<% if logged_in? %>
+			<p>
+				You are being logged in.
+			</p>
+		<% else %>
+			<%= link_to "<button>Sign Up</button>".html_safe, signup_path, :id => "button_id", :class => "button_class" %>
+		<% end %>
+</div>	
+</center>	
+

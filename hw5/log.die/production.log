@@ -1,0 +1,19 @@
+D, [2015-03-04T21:45:40.269208 #4107] DEBUG -- :   [1m[36m (4.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+D, [2015-03-04T21:45:40.269668 #4107] DEBUG -- :   [1m[35m (0.1ms)[0m  select sqlite_version(*)
+D, [2015-03-04T21:45:40.275904 #4107] DEBUG -- :   [1m[36m (5.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+D, [2015-03-04T21:45:40.277392 #4107] DEBUG -- :   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+I, [2015-03-04T21:45:40.281339 #4107]  INFO -- : Migrating to CreateUsers (20150212030837)
+D, [2015-03-04T21:45:40.282077 #4107] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-04T21:45:40.284049 #4107] DEBUG -- :   [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+D, [2015-03-04T21:45:40.308152 #4107] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150212030837"]]
+D, [2015-03-04T21:45:40.322353 #4107] DEBUG -- :   [1m[35m (13.5ms)[0m  commit transaction
+I, [2015-03-04T21:45:40.322550 #4107]  INFO -- : Migrating to CreateMicroposts (20150212031034)
+D, [2015-03-04T21:45:40.323204 #4107] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-04T21:45:40.324376 #4107] DEBUG -- :   [1m[35m (0.4ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+D, [2015-03-04T21:45:40.325640 #4107] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150212031034"]]
+D, [2015-03-04T21:45:40.331605 #4107] DEBUG -- :   [1m[35m (5.7ms)[0m  commit transaction
+I, [2015-03-04T21:45:40.331740 #4107]  INFO -- : Migrating to AddIndexToUsersEmail (20150304122559)
+D, [2015-03-04T21:45:40.332289 #4107] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-04T21:45:40.333305 #4107] DEBUG -- :   [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_user_on_email" ON "user" ("email")
+E, [2015-03-04T21:45:40.333481 #4107] ERROR -- : SQLite3::SQLException: no such table: main.user: CREATE UNIQUE INDEX "index_user_on_email" ON "user" ("email")
+D, [2015-03-04T21:45:40.333943 #4107] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
