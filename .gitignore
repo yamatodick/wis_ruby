@@ -15,4 +15,5 @@
 **/log/*
 !/log/.keep
 **/tmp
-#.gitignore
+.gitignore
+hw6-backup
