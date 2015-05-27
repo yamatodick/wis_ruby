@@ -1,0 +1,21 @@
+<% provide(:title, "Home") %>
+<center>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="content">
+	<h1>Sample App</h1>
+		<p>
+			This is the home page for the
+			<a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+			sample application.
+		</p>
+	
+		<% if logged_in? %>
+		<% else %>
+			<%= link_to "<button>Sign Up</button>".html_safe, signup_path, :id => "button_id", :class => "button_class" %>
+		<% end %>
+</div>	
+</center>	
+

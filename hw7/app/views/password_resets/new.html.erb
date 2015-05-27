@@ -1,0 +1,5 @@
+<%= form_for(:password_reset, url: password_reset_path(params[:id])) do |f| %>
+<%= f.label :email %>
+<%= f.text_field :email, class:'form-control' %>
+<%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
